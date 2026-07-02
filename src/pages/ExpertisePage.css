@@ -1,0 +1,262 @@
+/* Page header (light, so it separates cleanly from the navy navbar) */
+.exp-hero {
+  background: var(--bg-light);
+  color: var(--navy);
+  padding: 64px 0 70px;
+  text-align: center;
+}
+
+.exp-hero__eyebrow {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 12px;
+}
+
+.exp-hero__title {
+  font-size: 3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.exp-hero__title span {
+  color: var(--orange);
+}
+
+.exp-hero__sub {
+  max-width: 640px;
+  margin: 18px auto 0;
+  font-size: 1.08rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.exp-hero__divider {
+  width: 70px;
+  height: 4px;
+  background: var(--orange);
+  border-radius: 2px;
+  margin: 26px auto 0;
+}
+
+/* Topic sections */
+.exp-topic {
+  padding: 76px 0;
+  background: var(--white);
+}
+
+.exp-topic--alt {
+  background: var(--bg-light);
+}
+
+.exp-topic__head {
+  display: flex;
+  align-items: flex-start;
+  gap: 26px;
+  max-width: 860px;
+  margin-bottom: 48px;
+}
+
+.exp-topic__num {
+  font-family: var(--font-heading);
+  font-size: 3.4rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--orange);
+  opacity: 0.85;
+}
+
+.exp-topic__title {
+  font-size: 1.9rem;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+
+.exp-topic__lead {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* Cards */
+.exp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 26px;
+}
+
+.exp-card {
+  position: relative;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px 28px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.exp-topic--alt .exp-card {
+  border-color: transparent;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.exp-card:hover {
+  transform: translateY(-8px);
+  border-color: transparent;
+  box-shadow: 0 26px 50px rgba(0, 63, 125, 0.16);
+}
+
+/* icon + heading on one line */
+.exp-card__head {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.exp-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 46px;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  color: var(--orange);
+  background: rgba(255, 80, 3, 0.1);
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.exp-card__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.exp-card:hover .exp-card__icon {
+  background: var(--orange);
+  color: var(--white);
+  transform: scale(1.06) rotate(-4deg);
+}
+
+.exp-card h3 {
+  font-size: 1.12rem;
+  color: var(--navy);
+  margin: 0;
+  line-height: 1.25;
+}
+
+.exp-card p {
+  position: relative;
+  z-index: 1;
+  font-size: 0.94rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* soft glow that fades in on hover */
+.exp-card__glow {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 80, 3, 0.16), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.exp-card:hover .exp-card__glow {
+  opacity: 1;
+}
+
+/* CTA — a floating rounded orange card */
+.exp-cta {
+  background: var(--white);
+  padding: 80px 0 90px;
+}
+
+.exp-cta__card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 36px;
+  padding: 74px 40px;
+  text-align: center;
+  color: var(--white);
+  background: linear-gradient(135deg, #ff7a33 0%, var(--orange) 55%, #e84600 100%);
+  box-shadow: 0 30px 60px rgba(255, 80, 3, 0.28);
+}
+
+/* decorative translucent circles */
+.exp-cta__blob {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  pointer-events: none;
+}
+
+.exp-cta__blob--1 {
+  width: 260px;
+  height: 260px;
+  top: -110px;
+  left: -70px;
+}
+
+.exp-cta__blob--2 {
+  width: 200px;
+  height: 200px;
+  bottom: -90px;
+  right: -50px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.exp-cta__content {
+  position: relative;
+  z-index: 1;
+}
+
+.exp-cta h2 {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+}
+
+.exp-cta p {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.05rem;
+  margin-bottom: 30px;
+}
+
+.btn-light {
+  background: var(--white);
+  color: var(--orange);
+  font-weight: 700;
+  padding: 16px 36px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+.btn-light:hover {
+  background: var(--navy);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .exp-hero__title {
+    font-size: 2.2rem;
+  }
+
+  .exp-topic__head {
+    gap: 16px;
+  }
+
+  .exp-topic__num {
+    font-size: 2.6rem;
+  }
+}

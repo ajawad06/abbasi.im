@@ -1,0 +1,146 @@
+/* Page header */
+.pod-hero {
+  background: var(--bg-light);
+  text-align: center;
+  padding: 64px 0 70px;
+}
+
+.pod-hero__title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--navy);
+}
+
+.pod-hero__sub {
+  max-width: 620px;
+  margin: 16px auto 0;
+  color: var(--text-muted);
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.pod-hero__divider {
+  width: 70px;
+  height: 4px;
+  background: var(--orange);
+  border-radius: 2px;
+  margin: 26px auto 0;
+}
+
+/* Video grid */
+.pod-grid-section {
+  padding: 70px 0 80px;
+  background: var(--white);
+}
+
+.pod-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.pod-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+  background: #000;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.pod-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* 16:9 media area shared by thumbnail and iframe */
+.pod-card__media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+  padding: 0;
+  display: block;
+}
+
+.pod-card__media iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.pod-card__thumb {
+  cursor: pointer;
+  background: #000;
+}
+
+.pod-card__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition:
+    transform 0.4s ease,
+    opacity 0.3s ease;
+}
+
+.pod-card__thumb:hover img {
+  transform: scale(1.05);
+  opacity: 0.85;
+}
+
+.pod-card__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 68px;
+  height: 48px;
+}
+
+.pod-card__play svg {
+  width: 100%;
+  height: 100%;
+}
+
+.pod-card__play-bg {
+  fill: #212121;
+  opacity: 0.8;
+  transition:
+    fill 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.pod-card__thumb:hover .pod-card__play-bg {
+  fill: #ff0000;
+  opacity: 1;
+}
+
+/* Subscribe button below the videos */
+.pod-subscribe {
+  text-align: center;
+  margin-top: 54px;
+}
+
+.pod-subscribe .btn {
+  border-radius: 30px;
+  padding: 16px 38px;
+  font-size: 1rem;
+}
+
+@media (max-width: 960px) {
+  .pod-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .pod-grid {
+    grid-template-columns: 1fr;
+  }
+  .pod-hero__title {
+    font-size: 2.2rem;
+  }
+}

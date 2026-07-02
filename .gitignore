@@ -1,0 +1,13 @@
+node_modules
+dist
+.vite
+*.local
+.DS_Store
+
+# Env files — keep the example template, ignore the real ones
+.env
+.env.*
+!.env.example
+reference-screenshots/
+PROJECT_CONTEXT.md
+SUBABASE_SETUP.md

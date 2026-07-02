@@ -1,0 +1,26 @@
+.notfound {
+  background: var(--bg-light);
+  text-align: center;
+  padding: 110px 0 120px;
+}
+
+.notfound__code {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 6rem;
+  line-height: 1;
+  color: var(--orange);
+}
+
+.notfound__title {
+  font-size: 2.2rem;
+  color: var(--navy);
+  margin: 8px 0 14px;
+}
+
+.notfound__text {
+  color: var(--text-muted);
+  max-width: 460px;
+  margin: 0 auto 30px;
+  font-size: 1.05rem;
+}

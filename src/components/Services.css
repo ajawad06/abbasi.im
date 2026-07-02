@@ -1,0 +1,89 @@
+.services {
+  padding: 80px 0 90px;
+  background: var(--white);
+}
+
+.services__title {
+  color: var(--navy);
+  font-size: 2.6rem;
+  margin-bottom: 18px;
+}
+
+.services__subtitle {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 80px;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+}
+
+.service-card {
+  position: relative;
+  margin-top: 70px;
+  background: var(--navy);
+  color: var(--white);
+  padding: 86px 26px 38px;
+  text-align: center;
+}
+
+/*
+  The icon art is a screenshot that contains a white top half and a navy
+  bottom half (matching the section + card). We position it so the image's
+  white/navy boundary lands on the card's top edge — the white blends into
+  the white section above, the navy blends into the navy card below, and only
+  the orange blob reads as a floating icon.
+
+  --art-w      : rendered width of the image
+  --boundary   : where the white→navy split sits inside the image (0 = top, 1 = bottom)
+  Adjust --boundary if the seam doesn't sit exactly on the card edge.
+*/
+.service-card__art {
+  --art-w: 200px;
+  --boundary: 0.56;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: var(--art-w);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.service-card__art img {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* lift the image up so its internal navy/white seam sits on the card top */
+  transform: translateY(calc(-1 * var(--boundary) * 100%));
+}
+
+.service-card__title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+
+.service-card__text {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.65;
+}
+
+@media (max-width: 1000px) {
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 26px;
+  }
+}
+
+@media (max-width: 560px) {
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+}

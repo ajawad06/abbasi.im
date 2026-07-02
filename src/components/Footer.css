@@ -1,0 +1,140 @@
+.footer {
+  background: var(--navy);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Higher specificity so the global `.container { padding: 0 24px }` rule
+   (which loads after this file) can't collapse the vertical padding. */
+.footer .footer__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1.1fr 1fr;
+  gap: 40px;
+  padding: 40px 24px 20px;
+}
+
+/* Heading with orange left bar */
+.footer__heading {
+  position: relative;
+  font-size: 1.15rem;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 26px;
+  padding-left: 16px;
+}
+
+.footer__heading::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 22px;
+  background: var(--orange);
+  border-radius: 2px;
+}
+
+.footer__about {
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 300px;
+}
+
+/* Pages links — just turn orange on hover (like the social icons) */
+.footer__links li a {
+  display: block;
+  padding: 9px 0;
+  font-size: 0.98rem;
+  color: rgba(255, 255, 255, 0.82);
+  transition: color 0.2s ease;
+}
+
+.footer__links li a:hover {
+  color: var(--orange);
+}
+
+/* Contact rows with icons */
+.footer__contact li {
+  margin-bottom: 18px;
+}
+
+.footer__contact li a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.98rem;
+  color: rgba(255, 255, 255, 0.85);
+  transition: color 0.2s ease;
+}
+
+.footer__contact li a:hover {
+  color: var(--orange);
+}
+
+.footer__icon {
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+}
+
+.footer__icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+/* Social icons */
+.footer__social {
+  display: flex;
+  gap: 22px;
+}
+
+.footer__social li a {
+  display: inline-flex;
+  width: 22px;
+  height: 22px;
+  color: var(--white);
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.footer__social li a svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.footer__social li a:hover {
+  color: var(--orange);
+  transform: translateY(-2px);
+}
+
+.footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 22px 0;
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.72);
+  text-align: center;
+}
+
+.footer__credit {
+  color: var(--orange);
+  font-weight: 700;
+}
+
+@media (max-width: 860px) {
+  .footer .footer__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+  }
+}
+
+@media (max-width: 500px) {
+  .footer .footer__grid {
+    grid-template-columns: 1fr;
+  }
+}
