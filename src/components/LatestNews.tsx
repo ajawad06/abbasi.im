@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { supabase } from "../supabase.js";
+import { supabase } from "../supabase";
 import "./LatestNews.css";
 
 // Article thumbnail extension for files in /public/articles.
 const EXT = "png";
 
-const commentLabel = (n) =>
+const commentLabel = (n: number) =>
   !n ? "No Comments" : `${n} Comment${n > 1 ? "s" : ""}`;
 
 const posts = [
@@ -45,8 +45,8 @@ const posts = [
   },
 ];
 
-export default function LatestNews({ showMore = true }) {
-  const [counts, setCounts] = useState({});
+export default function LatestNews({ showMore = true }: { showMore?: boolean }) {
+  const [counts, setCounts] = useState<Record<string, number>>({});
 
   useEffect(() => {
     if (!supabase) return;
@@ -56,8 +56,8 @@ export default function LatestNews({ showMore = true }) {
       .select("article_slug")
       .then(({ data }) => {
         if (!active || !data) return;
-        const tally = {};
-        data.forEach((r) => {
+        const tally: Record<string, number> = {};
+        data.forEach((r: { article_slug: string }) => {
           tally[r.article_slug] = (tally[r.article_slug] || 0) + 1;
         });
         setCounts(tally);

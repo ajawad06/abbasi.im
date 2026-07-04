@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { WEB3FORMS_KEY } from '../config.js';
+import type { ChangeEvent, FormEvent, ReactNode } from 'react';
+import { WEB3FORMS_KEY } from '../config';
 import './ContactPage.css';
 
 const EMAIL = 'parvez@adventures.studio';
@@ -7,7 +8,7 @@ const GMAIL = (extra = '') =>
   `https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL}${extra}`;
 
 
-const stroke = (children) => (
+const stroke = (children: ReactNode) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
     strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
     {children}
@@ -64,7 +65,7 @@ const reachItems = [
   },
 ];
 
-const socialIcons = {
+const socialIcons: Record<string, ReactNode> = {
   Facebook: (
     <svg viewBox="0 0 320 512" aria-hidden="true">
       <path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z" />
@@ -96,10 +97,11 @@ const socials = [
 
 export default function ContactPage() {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
-  const [status, setStatus] = useState('idle'); // idle | sending | success | error
-  const update = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const update = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+    setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     // Fallback: no key configured yet → open a pre-filled Gmail compose window.
@@ -228,7 +230,7 @@ export default function ContactPage() {
               />
               <textarea
                 name="message"
-                rows="5"
+                rows={5}
                 placeholder="Tell Parvez a little about where you are..."
                 value={form.message}
                 onChange={update}

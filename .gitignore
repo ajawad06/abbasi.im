@@ -10,4 +10,4 @@ dist
 !.env.example
 reference-screenshots/
 PROJECT_CONTEXT.md
-SUBABASE_SETUP.md
+SUPABASE_SETUP.md

@@ -13,7 +13,7 @@ const videos = [
   { id: 'oe6qdXGdyiY', title: 'Rise & Fall of Startups in Pakistan' },
 ];
 
-function LiteYouTube({ id, title }) {
+function LiteYouTube({ id, title }: { id: string; title: string }) {
   const [playing, setPlaying] = useState(false);
 
   if (playing) {

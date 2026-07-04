@@ -1,5 +1,8 @@
 import { useState } from 'react';
+import type { Dispatch, ReactNode, SetStateAction } from 'react';
 import './GalleryPage.css';
+
+type Video = { id: string; thumb?: string };
 
 // Photo files live in /public/gallery. Change EXT to 'jpg' if needed, and add
 // or remove entries to match how many photos are dropped in the folder.
@@ -14,7 +17,7 @@ const images = [
 
 // Each video: { id, thumb? }. `thumb` overrides the auto YouTube thumbnail
 // (drop the image in /public/gallery). Otherwise the YouTube thumbnail is used.
-const videos = [
+const videos: Video[] = [
   { id: 'yE32duncHK4' },
   { id: 'I8lq1Ypwp4Q' },
   { id: 'ZRS8o21_PxE' },
@@ -22,7 +25,7 @@ const videos = [
   { id: '4dtrlfm5uoM' },
 ];
 
-function Chevron({ dir }) {
+function Chevron({ dir }: { dir: 'left' | 'right' }) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <polyline
@@ -37,7 +40,7 @@ function Chevron({ dir }) {
   );
 }
 
-function LiteYouTube({ id, thumb }) {
+function LiteYouTube({ id, thumb }: { id: string; thumb?: string }) {
   const [playing, setPlaying] = useState(false);
   if (playing) {
     return (
@@ -74,7 +77,7 @@ function LiteYouTube({ id, thumb }) {
   );
 }
 
-function usePager(count) {
+function usePager(count: number) {
   const [idx, setIdx] = useState(0);
   return {
     idx,
@@ -84,7 +87,17 @@ function usePager(count) {
   };
 }
 
-function Slider({ variant, count, idx, prev, next, setIdx, children }) {
+type SliderProps = {
+  variant?: string;
+  count: number;
+  idx: number;
+  setIdx: Dispatch<SetStateAction<number>>;
+  prev: () => void;
+  next: () => void;
+  children: ReactNode;
+};
+
+function Slider({ variant, count, idx, prev, next, setIdx, children }: SliderProps) {
   return (
     <div className={`slider ${variant ? `slider--${variant}` : ''}`}>
       <div className="slider__frame">

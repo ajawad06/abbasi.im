@@ -1,5 +1,5 @@
-import ArticleShell from '../components/ArticleShell.jsx';
-import ArticleImage from '../components/ArticleImage.jsx';
+import ArticleShell from '../components/ArticleShell';
+import ArticleImage from '../components/ArticleImage';
 
 const NEXT = {
   title: 'Unlocking Success: The Art of Building…',

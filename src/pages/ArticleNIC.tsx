@@ -1,5 +1,5 @@
-import ArticleShell from '../components/ArticleShell.jsx';
-import ArticleImage from '../components/ArticleImage.jsx';
+import ArticleShell from '../components/ArticleShell';
+import ArticleImage from '../components/ArticleImage';
 
 // This is the last article, so "Next →" loops back to the first one.
 const NEXT = {

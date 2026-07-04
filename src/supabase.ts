@@ -1,5 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
-import { SUPABASE_URL, SUPABASE_ANON_KEY } from './config.js';
+import { SUPABASE_URL, SUPABASE_ANON_KEY } from './config';
 
 // Only create the client if credentials are configured; otherwise `supabase`
 // is null and the UI falls back gracefully (no crash before setup).

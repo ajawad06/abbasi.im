@@ -1,22 +1,32 @@
 import { useState, useEffect } from "react";
+import type { ChangeEvent, FormEvent, ReactNode } from "react";
 import { Link, useLocation } from "react-router-dom";
-import ArticleImage from "./ArticleImage.jsx";
-import { supabase } from "../supabase.js";
+import ArticleImage from "./ArticleImage";
+import { supabase } from "../supabase";
 import "./ArticleShell.css";
 
 const ABBASI_LINKEDIN = "https://www.linkedin.com/company/abbasi-im";
 
-const fmtDate = (iso) =>
+type CommentRow = {
+  id: string | number;
+  article_slug?: string;
+  name: string;
+  website?: string | null;
+  body: string;
+  created_at: string;
+};
+
+const fmtDate = (iso: string) =>
   new Date(iso).toLocaleDateString(undefined, {
     year: "numeric",
     month: "long",
     day: "numeric",
   });
 
-const withProtocol = (url) =>
+const withProtocol = (url: string) =>
   /^https?:\/\//i.test(url) ? url : `https://${url}`;
 
-function shareLinks(url) {
+function shareLinks(url: string) {
   const enc = encodeURIComponent(url);
   return [
     {
@@ -58,11 +68,12 @@ function shareLinks(url) {
   ];
 }
 
-function CommentForm({ slug }) {
-  const [comments, setComments] = useState([]);
+function CommentForm({ slug }: { slug: string }) {
+  const [comments, setComments] = useState<CommentRow[]>([]);
   const [c, setC] = useState({ body: "", name: "", email: "", website: "" });
-  const [status, setStatus] = useState("idle"); // idle | sending | success | error
-  const update = (e) => setC({ ...c, [e.target.name]: e.target.value });
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const update = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+    setC({ ...c, [e.target.name]: e.target.value });
 
   // Load existing comments for this article
   useEffect(() => {
@@ -81,7 +92,7 @@ function CommentForm({ slug }) {
     };
   }, [slug]);
 
-  const submit = async (e) => {
+  const submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     // Not configured yet → soft success so the UI still works before setup.
@@ -218,6 +229,15 @@ function CommentForm({ slug }) {
   );
 }
 
+type ArticleShellProps = {
+  title: string;
+  date: string;
+  shareUrl: string;
+  featuredSrc: string;
+  next?: { title: string; href: string } | null;
+  children: ReactNode;
+};
+
 export default function ArticleShell({
   title,
   date,
@@ -225,7 +245,7 @@ export default function ArticleShell({
   featuredSrc,
   next,
   children,
-}) {
+}: ArticleShellProps) {
   const slug = useLocation().pathname;
   return (
     <article className="article">

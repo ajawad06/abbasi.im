@@ -1,4 +1,4 @@
-import ArticleShell from '../components/ArticleShell.jsx';
+import ArticleShell from '../components/ArticleShell';
 
 const NEXT = {
   title: '5 Must-Haves for a Good Entrepreneur',

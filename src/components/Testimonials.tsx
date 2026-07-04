@@ -35,7 +35,7 @@ const testimonials = [
   },
 ];
 
-function Stars({ rating }) {
+function Stars({ rating }: { rating: number }) {
   return (
     <div className="stars" aria-label={`${rating} out of 5 stars`}>
       {[1, 2, 3, 4, 5].map((n) => (

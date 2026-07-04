@@ -1,4 +1,4 @@
-import LatestNews from '../components/LatestNews.jsx';
+import LatestNews from '../components/LatestNews';
 
 export default function BlogPage() {
   return (

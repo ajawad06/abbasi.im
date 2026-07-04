@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 const SITE = "Parvez Abbasi";
 
 // Per-route <title> + meta description. Keyed by pathname.
-const META = {
+const META: Record<string, { title: string; desc: string }> = {
   "/": {
     title: "Home - Helping You, Helping Yourself",
     desc: "Parvez Abbasi helps people make the transition from employee to entrepreneur — mentorship across personal development, entrepreneurship, difficult life choices and networking.",

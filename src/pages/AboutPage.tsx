@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import './AboutPage.css';
 
 const stats = [
@@ -12,7 +13,7 @@ const companies = [
   'Etisalat', 'Millicom', 'C&W', 'Samsung',
 ];
 
-const icon = (children) => (
+const icon = (children: ReactNode) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
     strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
     {children}

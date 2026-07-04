@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import "./Services.css";
 
 const services = [
@@ -47,7 +48,7 @@ export default function Services() {
                   navy area sits over the navy card. */}
               <div
                 className="service-card__art"
-                style={{ "--boundary": s.boundary }}
+                style={{ "--boundary": s.boundary } as CSSProperties}
               >
                 <img src={s.img} alt={`${s.title.join(" ")} icon`} />
               </div>

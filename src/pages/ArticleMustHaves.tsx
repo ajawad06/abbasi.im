@@ -1,4 +1,4 @@
-import ArticleShell from '../components/ArticleShell.jsx';
+import ArticleShell from '../components/ArticleShell';
 
 const NEXT = {
   title: 'Pervez Abbasi Founder & Project Director, NIC',

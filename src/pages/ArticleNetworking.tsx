@@ -1,4 +1,4 @@
-import ArticleShell from "../components/ArticleShell.jsx";
+import ArticleShell from "../components/ArticleShell";
 
 const NEXT = {
   title: "Unveiling Your Purpose: A Journey to Self-Improvement…",

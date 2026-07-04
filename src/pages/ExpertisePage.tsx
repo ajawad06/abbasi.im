@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import "./ExpertisePage.css";
 
 const topics = [
@@ -87,7 +88,7 @@ const topics = [
   },
 ];
 
-const svg = (children) => (
+const svg = (children: ReactNode) => (
   <svg
     viewBox="0 0 24 24"
     fill="none"
@@ -101,7 +102,7 @@ const svg = (children) => (
   </svg>
 );
 
-const cardIcons = {
+const cardIcons: Record<string, ReactNode> = {
   'Self-Improvement': svg(
     <>
       <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
