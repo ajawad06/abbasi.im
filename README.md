@@ -1,10 +1,11 @@
-# abbasi.im
+# Abbasi.im
 
 A redesign of [abbasi.im](https://abbasi.im/); the personal brand & mentorship
-site for **Parvez Abbasi** (Founder & Project Director, National Incubation Center;
-Founder & CEO, AdVentures ).
+site for **Parvez Abbasi** (Founder & Project Director @ National Incubation Center;
+Founder & CEO @ AdVentures ).
 
 **Stack:** Vite · React 18 · TypeScript · React Router · plain CSS
+
 **Backend:** Supabase · Web3Forms
 
 ## Project structure
@@ -12,8 +13,7 @@ Founder & CEO, AdVentures ).
 ```
 public/            static assets (images, favicon, hero.png)
 src/
-  pages/           route components (Home, Expertise, Podcasts, About,
-                   Contact, Gallery, Blog, 6 article pages, 404)
+  pages/           (Home, Expertise, Podcasts, About, Contact, Gallery, Blog, 6 article pages, 404)
   components/      shared UI (Navbar, Hero, Footer, ArticleShell, …)
   config.ts        reads VITE_* env vars
   supabase.ts      Supabase client
