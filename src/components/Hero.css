@@ -1,69 +1,48 @@
 .hero {
   position: relative;
-  min-height: 660px;
+  width: 100%;
+  background: var(--navy);
+  line-height: 0;
+}
+
+.hero__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/*
+  Real button positioned exactly over the "Book a Free Discovery Call" button
+  baked into the image (measured: 41.2%–59.0% x, 61.6%–67.9% y). Sized a hair
+  larger so it fully covers the baked one. Values are % of the image, so it
+  stays aligned at any width; font uses vw so the label scales with the image.
+*/
+.hero__book {
+  position: absolute;
+  left: 40.9%;
+  top: 61.2%;
+  width: 18.4%;
+  height: 7.1%;
+  z-index: 2;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  /* Drop a real photo at /public/hero.jpg — it layers on top of the dark
-     overlay. If the file is absent, that layer is simply skipped and the
-     diagonal-stripe fallback below shows instead. */
-  background:
-    linear-gradient(rgba(0, 28, 56, 0.55), rgba(0, 28, 56, 0.55)),
-    url('/hero.jpg'),
-    repeating-linear-gradient(45deg, #04274d, #04274d 20px, #062f5c 20px, #062f5c 40px);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  box-sizing: border-box;
+
+  background: var(--orange);
   color: var(--white);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.05vw;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
 }
 
-.hero__overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(0, 35, 70, 0.45), rgba(0, 35, 70, 0.1));
-}
-
-.hero__content {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.hero__title {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  letter-spacing: 1px;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
-}
-
-.hero__title--bold {
-  font-size: 4rem;
-  font-weight: 800;
-}
-
-.hero__title--light {
-  font-size: 3.4rem;
-  font-weight: 400;
-}
-
-.hero__cta {
-  margin-top: 36px;
-}
-
-@media (max-width: 768px) {
-  .hero {
-    min-height: 480px;
-  }
-
-  .hero__title--bold {
-    font-size: 2.4rem;
-  }
-
-  .hero__title--light {
-    font-size: 2rem;
-  }
+.hero__book:hover {
+  background: var(--orange-dark);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
 }

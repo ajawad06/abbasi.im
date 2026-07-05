@@ -1,23 +1,25 @@
 import './Hero.css';
 
+const CALENDLY = 'https://calendly.com/parvez120665/30min?month=2026-06';
+
 export default function Hero() {
   return (
     <section className="hero">
-      <div className="hero__overlay" />
-      <div className="container hero__content">
-        <h2 className="hero__title">
-          <span className="hero__title--bold">HELPING YOU</span>
-          <span className="hero__title--light">HELPING YOURSELF</span>
-        </h2>
-        <a
-          href="https://calendly.com/parvez120665/30min?month=2026-06"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn btn-orange hero__cta"
-        >
-          Book a Free Discovery Call
-        </a>
-      </div>
+      {/* Full hero image (the "HELPING YOU / HELPING YOURSELF" text is part of it). */}
+      <img
+        className="hero__img"
+        src="/hero.png"
+        alt="Parvez Abbasi speaking to an audience — Helping You, Helping Yourself"
+      />
+      {/* Real button placed exactly over the baked-in one → opens Calendly. */}
+      <a
+        className="hero__book"
+        href={CALENDLY}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Book a Free Discovery Call
+      </a>
     </section>
   );
 }
