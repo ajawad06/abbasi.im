@@ -44,6 +44,20 @@
   border: 0;
 }
 
+/* Picture slides: all mounted & preloaded, only the active one shown (fade). */
+.gallery-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.gallery-slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .gallery-thumb {
   padding: 0;
   cursor: pointer;

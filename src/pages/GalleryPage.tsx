@@ -133,11 +133,18 @@ export default function GalleryPage() {
         <div className="container">
           <h2 className="gallery-title">Featured Pictures</h2>
           <Slider variant="pics" count={images.length} {...pics}>
-            <img
-              className="gallery-media"
-              src={images[pics.idx]}
-              alt={`Featured picture ${pics.idx + 1}`}
-            />
+            {/* all photos mounted (stacked) so they preload once; only the
+                active one is visible → instant, fading switches */}
+            {images.map((src, i) => (
+              <img
+                key={src}
+                className={`gallery-media gallery-slide${
+                  i === pics.idx ? " is-active" : ""
+                }`}
+                src={src}
+                alt={`Featured picture ${i + 1}`}
+              />
+            ))}
           </Slider>
         </div>
       </section>
