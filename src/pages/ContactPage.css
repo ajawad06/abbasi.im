@@ -1,5 +1,5 @@
 .contact {
-  background: linear-gradient(160deg, #eef2f7 0%, #f7f9fc 50%, #ffffff 100%);
+  background: linear-gradient(160deg, var(--bg-light) 0%, #fafafa 50%, var(--white) 100%);
   padding: 70px 0 90px;
 }
 
@@ -16,20 +16,21 @@
   font-size: 0.95rem;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--orange);
+  color: var(--red);
   margin-bottom: 10px;
 }
 
 .contact__title {
   font-size: 3rem;
   font-weight: 800;
-  color: var(--navy);
+  color: var(--black);
+  font-family: var(--font-display);
 }
 
 .contact__divider {
   width: 70px;
   height: 4px;
-  background: var(--orange);
+  background: var(--red);
   border-radius: 2px;
   margin: 20px auto 0;
 }
@@ -53,7 +54,7 @@
   font-size: 0.95rem;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: var(--navy);
+  color: var(--black);
   margin-bottom: 22px;
 }
 
@@ -78,7 +79,7 @@
   flex: 0 0 22px;
   width: 22px;
   height: 22px;
-  color: var(--orange);
+  color: var(--red);
 }
 
 .reach__ic svg {
@@ -100,19 +101,19 @@
 .reach__value {
   font-family: var(--font-heading);
   font-weight: 700;
-  color: var(--navy);
+  color: var(--black);
   font-size: 1.02rem;
   word-break: break-word;
   transition: color 0.2s ease;
 }
 
 .reach__list li a:hover .reach__value {
-  color: var(--orange);
+  color: var(--red);
 }
 
 /* Follow along dark card */
 .follow-card {
-  background: #0a1f44;
+  background: var(--black);
   border-radius: 16px;
   padding: 26px 24px;
 }
@@ -159,8 +160,8 @@
 }
 
 .follow-pill:hover {
-  background: var(--orange);
-  border-color: var(--orange);
+  background: var(--red);
+  border-color: var(--red);
   transform: translateY(-2px);
 }
 
@@ -176,7 +177,7 @@
 .form-card__title {
   font-size: 2rem;
   font-weight: 800;
-  color: var(--navy);
+  color: var(--black);
   margin-bottom: 8px;
 }
 
@@ -205,23 +206,23 @@
   padding: 15px 18px;
   font-family: var(--font-body);
   font-size: 1rem;
-  color: var(--navy);
-  background: #f8fafc;
+  color: var(--black);
+  background: var(--bg-light);
   resize: vertical;
   transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 .contact__form input::placeholder,
 .contact__form textarea::placeholder {
-  color: #9aa6b4;
+  color: var(--text-muted);
 }
 
 .contact__form input:focus,
 .contact__form textarea:focus {
   outline: none;
   background: var(--white);
-  border-color: var(--orange);
-  box-shadow: 0 0 0 3px rgba(255, 80, 3, 0.15);
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(228, 0, 43, 0.15);
 }
 
 .contact__submit {
@@ -232,7 +233,7 @@
   margin-top: 8px;
   border: none;
   cursor: pointer;
-  background: var(--orange);
+  background: var(--red);
   color: var(--white);
   font-family: var(--font-heading);
   font-weight: 700;
@@ -243,7 +244,7 @@
 }
 
 .contact__submit:hover {
-  background: var(--orange-dark);
+  background: var(--red-dark);
   transform: translateY(-2px);
 }
 
@@ -264,7 +265,7 @@
 }
 
 .contact__status--err {
-  color: #cc2b2b;
+  color: var(--red);
 }
 
 @media (max-width: 900px) {

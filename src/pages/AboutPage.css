@@ -1,6 +1,6 @@
 /* ============ HERO ============ */
 .about-hero {
-  background: linear-gradient(160deg, #eef3f9 0%, var(--white) 65%);
+  background: linear-gradient(160deg, var(--bg-light) 0%, var(--white) 65%);
   padding: 72px 0 80px;
   position: relative;
   overflow: hidden;
@@ -15,7 +15,7 @@
   width: 360px;
   height: 360px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 80, 3, 0.08), transparent 70%);
+  background: radial-gradient(circle, rgba(228, 0, 43, 0.08), transparent 70%);
   pointer-events: none;
 }
 
@@ -36,14 +36,14 @@
   font-size: 1rem;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: var(--navy);
+  color: var(--black);
 }
 
 .about-hero__eyebrow::before {
   content: '';
   width: 52px;
   height: 4px;
-  background: var(--orange);
+  background: var(--red);
   border-radius: 2px;
   margin-right: 16px;
 }
@@ -53,11 +53,12 @@
   font-size: 2.8rem;
   font-weight: 800;
   line-height: 1.15;
-  color: var(--navy);
+  color: var(--black);
+  font-family: var(--font-display);
 }
 
 .about-hero__title span {
-  color: var(--orange);
+  color: var(--red);
 }
 
 .about-hero__lead {
@@ -74,22 +75,23 @@
   width: 100%;
   height: auto;
   border-radius: 16px;
-  box-shadow: 0 28px 60px rgba(0, 63, 125, 0.22);
+  box-shadow: 0 28px 60px rgba(13, 13, 13, 0.22);
+  filter: var(--photo-filter);
 }
 
-/* orange accent frame behind the photo */
+/* red accent frame behind the photo */
 .about-hero__media::after {
   content: '';
   position: absolute;
   inset: 18px -18px -18px 18px;
-  border: 3px solid var(--orange);
+  border: 3px solid var(--red);
   border-radius: 16px;
   z-index: -1;
 }
 
 /* ============ STATS BAND ============ */
 .about-stats {
-  background: var(--navy);
+  background: var(--black);
   padding: 48px 0;
 }
 
@@ -122,7 +124,7 @@
   font-weight: 800;
   font-size: 2.8rem;
   line-height: 1;
-  color: var(--orange);
+  color: var(--red);
 }
 
 .about-stat__label {
@@ -151,7 +153,7 @@
   border: 1px solid var(--border);
   border-radius: 18px;
   padding: 40px 36px;
-  box-shadow: 0 12px 30px rgba(0, 63, 125, 0.06);
+  box-shadow: 0 12px 30px rgba(13, 13, 13, 0.06);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   overflow: hidden;
 }
@@ -163,7 +165,7 @@
   left: 0;
   width: 6px;
   height: 100%;
-  background: var(--orange);
+  background: var(--red);
   transform: scaleY(0);
   transform-origin: top;
   transition: transform 0.3s ease;
@@ -171,7 +173,7 @@
 
 .story-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 24px 48px rgba(0, 63, 125, 0.14);
+  box-shadow: 0 24px 48px rgba(13, 13, 13, 0.14);
 }
 
 .story-card:hover::before {
@@ -185,8 +187,8 @@
   width: 56px;
   height: 56px;
   border-radius: 14px;
-  background: rgba(255, 80, 3, 0.1);
-  color: var(--orange);
+  background: rgba(228, 0, 43, 0.1);
+  color: var(--red);
   margin-bottom: 22px;
   transition: background 0.3s ease, color 0.3s ease;
 }
@@ -197,14 +199,14 @@
 }
 
 .story-card:hover .story-card__icon {
-  background: var(--orange);
+  background: var(--red);
   color: var(--white);
 }
 
 .story-card__title {
   font-size: 1.5rem;
   font-weight: 800;
-  color: var(--navy);
+  color: var(--black);
   margin-bottom: 14px;
 }
 
@@ -216,7 +218,7 @@
 
 /* ============ GLOBAL EXPERIENCE ============ */
 .about-exp {
-  background: var(--navy);
+  background: var(--black);
   padding: 84px 0;
   position: relative;
   overflow: hidden;
@@ -231,7 +233,7 @@
   width: 380px;
   height: 380px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 80, 3, 0.18), transparent 70%);
+  background: radial-gradient(circle, rgba(228, 0, 43, 0.18), transparent 70%);
   pointer-events: none;
 }
 
@@ -250,7 +252,7 @@
   font-size: 0.9rem;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--orange);
+  color: var(--red);
 }
 
 .about-exp__title {
@@ -277,7 +279,7 @@
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 1rem;
-  color: var(--navy);
+  color: var(--black);
   background: var(--white);
   border: 1px solid transparent;
   border-radius: 30px;
@@ -288,7 +290,7 @@
 }
 
 .about-chip:hover {
-  background: var(--orange);
+  background: var(--red);
   color: var(--white);
   transform: translateY(-3px);
 }
@@ -313,16 +315,16 @@
   font-family: var(--font-heading);
   font-size: 6rem;
   line-height: 0.6;
-  color: var(--orange);
+  color: var(--red);
   height: 48px;
 }
 
 .about-quote__text {
-  font-family: var(--font-heading);
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.7rem;
   line-height: 1.5;
-  color: var(--navy);
+  color: var(--black);
   margin-bottom: 24px;
 }
 
@@ -341,7 +343,7 @@
   display: inline-block;
   width: 28px;
   height: 3px;
-  background: var(--orange);
+  background: var(--red);
   border-radius: 2px;
   vertical-align: middle;
   margin-right: 12px;

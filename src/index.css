@@ -1,16 +1,19 @@
 :root {
-  --navy: #003f7d;
-  --navy-dark: #00305f;
-  --orange: #ff5003;
-  --orange-dark: #e84600;
-  --text-dark: #2b2b2b;
-  --text-muted: #5a6472;
-  --bg-light: #f5f7fa;
+  --black: #0d0d0d;
+  --black-dark: #000000;
+  --red: #e4002b;
+  --red-dark: #a80020;
+  --text-dark: #1a1a1a;
+  --text-muted: #666666;
+  --bg-light: #f2f2f2;
   --white: #ffffff;
-  --border: #e4e8ee;
+  --border: #dddddd;
 
   --font-heading: 'Montserrat', sans-serif;
   --font-body: 'Raleway', 'Roboto', sans-serif;
+  --font-display: 'Lora', serif;
+
+  --photo-filter: grayscale(0.9) contrast(1.08);
 
   --container: 1200px;
 }
@@ -78,12 +81,12 @@ ul {
 }
 
 .btn-orange {
-  background: var(--orange);
+  background: var(--red);
   color: var(--white);
 }
 
 .btn-orange:hover {
-  background: var(--orange-dark);
+  background: var(--red-dark);
   transform: translateY(-2px);
 }
 
@@ -92,14 +95,15 @@ ul {
   text-align: center;
   font-size: 2.1rem;
   font-weight: 800;
-  color: var(--navy);
+  color: var(--black);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin-bottom: 8px;
+  font-family: var(--font-display);
 }
 
 .section-title .accent {
-  color: var(--orange);
+  color: var(--red);
 }
 
 .section {

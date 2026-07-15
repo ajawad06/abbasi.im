@@ -8,7 +8,8 @@
 .pod-hero__title {
   font-size: 3rem;
   font-weight: 800;
-  color: var(--navy);
+  color: var(--black);
+  font-family: var(--font-display);
 }
 
 .pod-hero__sub {
@@ -22,7 +23,7 @@
 .pod-hero__divider {
   width: 70px;
   height: 4px;
-  background: var(--orange);
+  background: var(--red);
   border-radius: 2px;
   margin: 26px auto 0;
 }

@@ -5,7 +5,7 @@
 .news__divider {
   width: 70px;
   height: 4px;
-  background: var(--orange);
+  background: var(--red);
   margin: 14px auto 46px;
   border-radius: 2px;
 }
@@ -41,6 +41,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  filter: var(--photo-filter);
 }
 
 .news-card__body {
@@ -48,12 +49,12 @@
 }
 
 .news-card__title a:hover {
-  color: var(--orange);
+  color: var(--red);
 }
 
 .news-card__title {
   font-size: 1.05rem;
-  color: var(--navy);
+  color: var(--black);
   line-height: 1.4;
   margin-bottom: 14px;
   min-height: 58px;
@@ -69,18 +70,18 @@
 }
 
 .news-card__meta .dot {
-  color: var(--orange);
+  color: var(--red);
 }
 
 .news-card__link {
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 0.88rem;
-  color: var(--orange);
+  color: var(--red);
 }
 
 .news-card__link:hover {
-  color: var(--orange-dark);
+  color: var(--red-dark);
 }
 
 .news__more {

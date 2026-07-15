@@ -1,7 +1,7 @@
 .hero {
   position: relative;
   width: 100%;
-  background: var(--navy);
+  background: var(--black);
   line-height: 0;
 }
 
@@ -9,6 +9,7 @@
   display: block;
   width: 100%;
   height: auto;
+  filter: var(--photo-filter);
 }
 
 /*
@@ -30,7 +31,7 @@
   justify-content: center;
   box-sizing: border-box;
 
-  background: var(--orange);
+  background: var(--red);
   color: var(--white);
   font-family: var(--font-heading);
   font-weight: 700;
@@ -41,11 +42,35 @@
   border-radius: 6px;
   /* the solid orange ring (spread in vw) scales with the image and covers the
      baked button's faint outline without making the button itself bigger */
-  box-shadow: 0 0 0 0.4vw var(--orange);
+  box-shadow: 0 0 0 0.4vw var(--red);
   transition: background 0.2s ease, box-shadow 0.2s ease;
 }
 
 .hero__book:hover {
-  background: var(--orange-dark);
-  box-shadow: 0 0 0 0.4vw var(--orange-dark), 0 8px 22px rgba(0, 0, 0, 0.35);
+  background: var(--red-dark);
+  box-shadow: 0 0 0 0.4vw var(--red-dark), 0 8px 22px rgba(0, 0, 0, 0.35);
+}
+
+/* Below ~600px the baked button becomes too small to be a usable target
+   (its box shrinks to the image's tiny percentage-based footprint), so we
+   detach the real button from that exact overlay and give it a fixed,
+   legible size instead — alignment with the (illegible-anyway) baked
+   button no longer matters at this size. */
+@media (max-width: 600px) {
+  /* Anchored at the baked button's actual center (40.9%+18.3%/2, 61.3%+6.9%/2)
+     so the enlarged fixed-size button still fully covers it. */
+  .hero__book {
+    left: 50%;
+    top: 64.75%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    padding: 8px 14px;
+    font-size: 0.7rem;
+    box-shadow: 0 0 0 3px var(--red);
+  }
+
+  .hero__book:hover {
+    box-shadow: 0 0 0 3px var(--red-dark);
+  }
 }

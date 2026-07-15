@@ -4,7 +4,7 @@
 }
 
 .services__title {
-  color: var(--navy);
+  color: var(--black);
   font-size: 2.6rem;
   margin-bottom: 18px;
 }
@@ -26,7 +26,7 @@
 .service-card {
   position: relative;
   margin-top: 70px;
-  background: var(--navy);
+  background: var(--black);
   color: var(--white);
   padding: 86px 26px 38px;
   text-align: center;

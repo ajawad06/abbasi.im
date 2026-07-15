@@ -9,13 +9,14 @@
   font-weight: 800;
   font-size: 6rem;
   line-height: 1;
-  color: var(--orange);
+  color: var(--red);
 }
 
 .notfound__title {
   font-size: 2.2rem;
-  color: var(--navy);
+  color: var(--black);
   margin: 8px 0 14px;
+  font-family: var(--font-display);
 }
 
 .notfound__text {

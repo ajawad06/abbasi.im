@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   z-index: 50;
-  background: var(--navy);
+  background: var(--black);
 }
 
 /* Full-width bar (override the 1200px .container) so the logo sits near the
@@ -18,14 +18,36 @@
 
 .navbar__logo {
   font-family: var(--font-heading);
-  font-weight: 800;
+  font-weight: 700;
   font-size: 2.4rem;
   letter-spacing: -0.5px;
   color: var(--white);
 }
 
-.navbar__logo span {
-  color: var(--orange);
+.navbar__logo-i {
+  position: relative;
+  display: inline-block;
+}
+
+.navbar__logo-i-dot {
+  position: absolute;
+  top: 0.32em;
+  left: 50%;
+  width: 0.25em;
+  height: 0.25em;
+  border-radius: 50%;
+  background: var(--red);
+  transform: translateX(-50%);
+}
+
+.navbar__logo-dot {
+  display: inline-block;
+  width: 0.25em;
+  height: 0.25em;
+  border-radius: 50%;
+  background: var(--red);
+  vertical-align: -0.02em;
+  margin: 0 0.05em;
 }
 
 .navbar__menu {
@@ -44,7 +66,7 @@
 }
 
 .navbar__menu > li > a:hover {
-  color: var(--orange);
+  color: var(--red);
 }
 
 /* Dropdown */
@@ -83,7 +105,7 @@
 
 .navbar__dropdown li a:hover {
   background: var(--bg-light);
-  color: var(--orange);
+  color: var(--red);
 }
 
 /* Mobile toggle */
@@ -108,12 +130,21 @@
     display: flex;
   }
 
+  .navbar .navbar__inner {
+    height: 64px;
+    padding: 0 20px;
+  }
+
+  .navbar__logo {
+    font-size: 1.6rem;
+  }
+
   .navbar__nav {
     position: absolute;
-    top: 96px;
+    top: 64px;
     left: 0;
     width: 100%;
-    background: var(--navy);
+    background: var(--black);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;

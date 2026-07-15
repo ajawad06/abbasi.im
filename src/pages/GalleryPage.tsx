@@ -132,6 +132,7 @@ export default function GalleryPage() {
       <section className="gallery-section">
         <div className="container">
           <h2 className="gallery-title">Featured Pictures</h2>
+          <div className="gallery-title__divider" />
           <Slider variant="pics" count={images.length} {...pics}>
             {/* all photos mounted (stacked) so they preload once; only the
                 active one is visible → instant, fading switches */}
@@ -152,6 +153,7 @@ export default function GalleryPage() {
       <section className="gallery-section gallery-section--alt">
         <div className="container">
           <h2 className="gallery-title">Featured Videos</h2>
+          <div className="gallery-title__divider" />
           <Slider variant="videos" count={videos.length} {...vids}>
             {/* key forces a remount on slide change so a playing video stops */}
             <LiteYouTube

@@ -7,12 +7,12 @@
   gap: 6px;
   background: repeating-linear-gradient(
     45deg,
-    #e9edf3,
-    #e9edf3 12px,
-    #e2e7ef 12px,
-    #e2e7ef 24px
+    #ececec,
+    #ececec 12px,
+    #e2e2e2 12px,
+    #e2e2e2 24px
   );
-  color: #93a0b3;
+  color: var(--text-muted);
   font-family: var(--font-heading);
   font-size: 0.8rem;
   font-weight: 600;

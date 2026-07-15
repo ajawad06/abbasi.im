@@ -1,5 +1,5 @@
 .footer {
-  background: var(--navy);
+  background: var(--black);
   color: rgba(255, 255, 255, 0.85);
 }
 
@@ -31,7 +31,7 @@
   transform: translateY(-50%);
   width: 4px;
   height: 22px;
-  background: var(--orange);
+  background: var(--red);
   border-radius: 2px;
 }
 
@@ -52,7 +52,7 @@
 }
 
 .footer__links li a:hover {
-  color: var(--orange);
+  color: var(--red);
 }
 
 /* Contact rows with icons */
@@ -70,7 +70,7 @@
 }
 
 .footer__contact li a:hover {
-  color: var(--orange);
+  color: var(--red);
 }
 
 .footer__icon {
@@ -109,7 +109,7 @@
 }
 
 .footer__social li a:hover {
-  color: var(--orange);
+  color: var(--red);
   transform: translateY(-2px);
 }
 
@@ -122,7 +122,7 @@
 }
 
 .footer__credit {
-  color: var(--orange);
+  color: var(--red);
   font-weight: 700;
 }
 

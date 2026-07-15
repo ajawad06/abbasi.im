@@ -2,6 +2,19 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 
+// Renders a lowercase "i" with its tittle (dot) recolored red — plain CSS
+// can't restyle part of a glyph, so this overlays a red circle exactly on
+// top of the existing (white) dot, fully covering it, rather than trying to
+// substitute a dotless-i character (which has inconsistent font fallback).
+function RedDotI() {
+  return (
+    <span className="navbar__logo-i">
+      i
+      <span className="navbar__logo-i-dot" />
+    </span>
+  );
+}
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const close = () => setOpen(false);
@@ -10,7 +23,10 @@ export default function Navbar() {
     <header className="navbar">
       <div className="container navbar__inner">
         <Link to="/" className="navbar__logo" onClick={close}>
-          Abbasi<span>.im</span>
+          Abbas
+          <RedDotI />
+          <span className="navbar__logo-dot" />
+          <RedDotI />m
         </Link>
 
         <button
