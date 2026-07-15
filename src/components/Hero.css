@@ -65,9 +65,9 @@
     width: auto;
     height: auto;
     transform: translate(-50%, -50%);
-    padding: 8px 14px;
-    font-size: 0.7rem;
-    box-shadow: 0 0 0 3px var(--red);
+    padding: 4px 8px;
+    font-size: 0.52rem;
+    box-shadow: 0 0 0 2px var(--red);
   }
 
   .hero__book:hover {
